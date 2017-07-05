@@ -1,0 +1,54 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: consul-example
+  aop:
+    proxy-target-class: true
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        tags: management.context-path=/mgmt, health.path=/ping
+        default-query-tag: test
+#  boot:
+#    admin:
+#      username: "${security.user.name}"       #These two are needed so that the client
+#      password: "${security.user.password}"   #can register at the protected server api
+#      client:
+#        metadata:
+#          user.name: "${security.user.name}"          #These two are needed so that the server
+#          user.password:  "${security.user.password}" #can access the proteceted client endpoints
+
+management.context-path: /mgmt
+endpoints.health.path: /ping
+
+
+spring.boot.admin.discovery:
+  ignored-services: consul
+
+spring.boot.admin.routes.endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream
+
+zuul:
+  sensitiveHeaders:
+
+#security:
+#  oauth2:
+#    client:
+#      clientId: xw-test
+#      clientSecret: 123456
+#      accessTokenUri: http://dev.jyx365.top/oauth/access_token
+#      userAuthorizationUri: http://dev.jyx365.top/sso/login
+#      tokenName: access_token
+#      scope: userinfo
+#    resource:
+#      userInfoUri: http://dev.jyx365.top/api/v1.0/users/check_token
+#
+#zuul:
+#  sensitiveHeaders:
+#
+#logging:
+#  level:
+#    org.springframework.security: INFO
+#    org.springframework.security.oauth2: DEBUG

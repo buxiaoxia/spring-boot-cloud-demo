@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="persistenceUnit">
+        <class>com.buxiaoxia.com.business.entity.BigCompany</class>
+        <class>com.buxiaoxia.com.business.entity.Country</class>
+        <class>com.buxiaoxia.com.business.entity.President</class>
+        <class>com.buxiaoxia.com.business.entity.Province</class>
+        <class>com.buxiaoxia.com.business.entity.RelCountryCompany</class>
+        <properties>
+            <property name="eclipselink.jdbc.url" value="jdbc:mysql://120.27.197.67:3306/test"/>
+            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="eclipselink.jdbc.user"/>
+            <property name="eclipselink.jdbc.password"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://120.27.197.67:3306/test"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.username"/>
+            <property name="hibernate.connection.password"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:mysql://120.27.197.67:3306/test"/>
+            <property name="openjpa.ConnectionDriverName" value="com.mysql.jdbc.Driver"/>
+            <property name="openjpa.ConnectionUserName"/>
+            <property name="openjpa.ConnectionPassword"/>
+            <property name="toplink.jdbc.url" value="jdbc:mysql://120.27.197.67:3306/test"/>
+            <property name="toplink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="toplink.jdbc.user"/>
+            <property name="toplink.jdbc.password"/>
+        </properties>
+    </persistence-unit>
+</persistence>
